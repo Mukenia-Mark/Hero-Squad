@@ -78,7 +78,7 @@ public class App {
       List<Hero> allHeroesBySquad = squadDao.getAllHeroesBySquad(idOfSquadToFind);
       model.put("heroes", allHeroesBySquad);
       model.put("squad", squadDao.getAll());
-      return new ModelAndView(model, "squad-detail.hbs");
+      return new ModelAndView(model, "squad-detail.hbs.hbs");
     }, new HandlebarsTemplateEngine());
     
     //get: show a form to update a squad
