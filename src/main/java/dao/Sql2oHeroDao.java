@@ -4,7 +4,7 @@ import models.Hero;
 import org.sql2o.*;
 import java.util.List;
 
-public class Sql2oHeroDao implements HeroDao{
+public class Sql2oHeroDao implements HeroDao {
   
   private final Sql2o sql2o;
   
@@ -74,7 +74,7 @@ public class Sql2oHeroDao implements HeroDao{
   }
   
   @Override
-  public void clearAlTasks() {
+  public void clearAllHeroes() {
     String sql = "DELETE from heroes";
     try (Connection con = sql2o.open()) {
       con.createQuery(sql)
