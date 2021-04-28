@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dao.Sql2oSquadDaoTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-04-28T15:46:07" hostname="linux" time="1.804">
+  <properties/>
+  <testcase name="noSquadsReturnsEmptyList" classname="dao.Sql2oSquadDaoTest" time="0.37"/>
+  <testcase name="deleteByIdDeletesCorrectSquad" classname="dao.Sql2oSquadDaoTest" time="0.477"/>
+  <testcase name="getAllHeroesBySquadReturnsTasksCorrectly" classname="dao.Sql2oSquadDaoTest" time="0.746"/>
+  <testcase name="addingSquadSetsId" classname="dao.Sql2oSquadDaoTest" time="0.208"/>
+  <system-out><![CDATA[clearing database
+clearing database
+clearing database
+clearing database
+connection closed
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

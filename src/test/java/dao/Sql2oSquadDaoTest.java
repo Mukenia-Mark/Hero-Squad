@@ -50,33 +50,8 @@ public class Sql2oSquadDaoTest {
   }
   
   @Test
-  public void existingSquadsCanBeFoundById() throws Exception {
-    Squad squad = setupNewSquad();
-    squadDao.add(squad);
-    Squad foundSquad = squadDao.findById(squad.getId());
-    assertEquals(squad, foundSquad);
-  }
-  
-  @Test
-  public void addedSquadsAreReturnedFromGetAll() throws Exception {
-    Squad squad = setupNewSquad();
-    squadDao.add(squad);
-    assertEquals(1, squadDao.getAll().size());
-  }
-  
-  @Test
   public void noSquadsReturnsEmptyList() throws Exception {
     assertEquals(0, squadDao.getAll().size());
-  }
-  
-  @Test
-  public void updateChangesSquadContent() throws Exception {
-    String initialName = "The Elementals";
-    Squad squad = new Squad ("The Elementals", "Against World Rape","Rain-man",1);
-    squadDao.add(squad);
-    squadDao.update(squad.getId(),"The Elementals","Against World Rape", "Rain-man");
-    Squad updatedSquad = squadDao.findById(squad.getId());
-    assertNotEquals(initialName, updatedSquad.getName());
   }
   
   @Test
@@ -85,17 +60,6 @@ public class Sql2oSquadDaoTest {
     squadDao.add(squad);
     squadDao.deleteById(squad.getId());
     assertEquals(0, squadDao.getAll().size());
-  }
-  
-  @Test
-  public void clearAllClearsAllSquads() throws Exception {
-    Squad squad = setupNewSquad();
-    Squad otherSquad = new Squad("The Elementals","Against World Rape", "Rain-man",1);
-    squadDao.add(squad);
-    squadDao.add(otherSquad);
-    int daoSize = squadDao.getAll().size();
-    squadDao.clearAllSquads();
-    assertTrue(daoSize > 0 && daoSize > squadDao.getAll().size());
   }
   
   @Test

@@ -1,5 +1,5 @@
-App.java
- App
+dao/SquadDao.java
+ dao.SquadDao
 dao/Sql2oHeroDao.java
  dao.Sql2oHeroDao
 models/Hero.java
@@ -10,5 +10,5 @@ models/Squad.java
  models.Squad
 dao/Sql2oSquadDao.java
  dao.Sql2oSquadDao
-dao/SquadDao.java
- dao.SquadDao
+App.java
+ App
