@@ -24,22 +24,11 @@ public class Squad {
     return Objects.hash(name, cause, members, id);
   }
   
-  public int getId() {
-    return id;
-  }
-  
-  public void setId(int id) {
-    this.id = id;
-  }
-  
-  public Squad(int id) {
-    this.id = id;
-  }
-  
-  public Squad(String name, String cause, String members) {
+  public Squad(String name, String cause, String members, int id) {
     this.name = name;
     this.cause = cause;
     this.members = members;
+    this.id = id;
   }
   
   public String getName() {
@@ -66,4 +55,11 @@ public class Squad {
     this.members = members;
   }
   
+  public int getId() {
+    return id;
+  }
+  
+  public void setId(int id) {
+    this.id = id;
+  }
 }

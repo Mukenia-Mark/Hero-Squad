@@ -38,7 +38,7 @@ public class HeroTest {
   
   //helper methods
   public Hero setupNewHero(){
-    return new Hero("Rain-man", 27, "controls the weather", "being indoors");
+    return new Hero("Rain-man", 27, "controls the weather", "being indoors",1);
   }
   
 }

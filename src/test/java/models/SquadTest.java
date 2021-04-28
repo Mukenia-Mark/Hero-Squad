@@ -30,6 +30,6 @@ public class SquadTest {
   }
   
   public Squad setupNewSquad(){
-    return new Squad("The Elementals", "Against World Rape","Rain-man");
+    return new Squad("The Elementals", "Against World Rape","Rain-man",1);
   }
 }
