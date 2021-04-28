@@ -1,14 +1,14 @@
-dao/SquadDao.java
- dao.SquadDao
+App.java
+ App
 dao/Sql2oHeroDao.java
  dao.Sql2oHeroDao
-models/Hero.java
- models.Hero
-dao/HeroDao.java
- dao.HeroDao
 models/Squad.java
  models.Squad
 dao/Sql2oSquadDao.java
  dao.Sql2oSquadDao
-App.java
- App
+dao/HeroDao.java
+ dao.HeroDao
+models/Hero.java
+ models.Hero
+dao/SquadDao.java
+ dao.SquadDao

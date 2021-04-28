@@ -12,10 +12,20 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
 
 public class App {
-  public static void main(String[] args) {
+    static int getHerokuAssignedPort() {
+      ProcessBuilder processBuilder = new ProcessBuilder();
+      if (processBuilder.environment().get("PORT") != null) {
+        return Integer.parseInt(processBuilder.environment().get("PORT"));
+      } return 4567;
+    } public static void main(String[] args) {
+      port(getHerokuAssignedPort());
     staticFileLocation("/public");
-    String connectionString = "jdbc:postgresql://localhost:5432/herosquad";
-    Sql2o sql2o = new Sql2o(connectionString, "mark", "infinity");
+    //String connectionString = "jdbc:postgresql://localhost:5432/herosquad";
+    //Sql2o sql2o = new Sql2o(connectionString, "mark", "infinity");
+    String connectionString = "jdbc:postgresql://ec2-54-87-112-29.compute-1.amazonaws" +
+                              ".com:5432/d16gf5ctskdn00";
+    Sql2o sql2o = new Sql2o(connectionString, "qlnlcfzwfzolyr",
+      "3de267ab7d078e0a37d33de40884aae55ff9d09cdaa5403c741c5a19b6118416");
     Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
     Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
     
@@ -39,7 +49,7 @@ public class App {
     }, new HandlebarsTemplateEngine());
     
     //post: process a form to create a new squad
-    post("/squads", (req, res) -> { //new
+    post("/squads", (req, res) -> {
       Map<String, Object> model = new HashMap<>();
       String name = req.queryParams("name");
       String cause = req.queryParams("cause");
@@ -52,7 +62,7 @@ public class App {
     }, new HandlebarsTemplateEngine());
     
     
-    //get: delete all squads and all heros
+    //get: delete all squads and all heroes
     get("/squad/delete", (req, res) -> {
       Map<String, Object> model = new HashMap<>();
       squadDao.clearAllSquads();
