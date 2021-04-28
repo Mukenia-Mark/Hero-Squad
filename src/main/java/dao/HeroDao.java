@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface HeroDao {
   //List
-  List<Hero> getALl();
+  List<Hero> getAll();
   
   //Create
   void add(Hero hero);
