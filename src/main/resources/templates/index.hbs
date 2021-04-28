@@ -1,0 +1,15 @@
+{{#partial "content"}}
+
+    <h1> Welcome to Hero-Squad!</h1>
+    <p> An app where you can group your favourite superheroes (or villains) into new squads</p>
+
+    {{#if heroes}}
+        {{#each heroes }}
+            <p><a href="/squads/{{squadId}}/heroes/{{id}}">{{name}}</a></p>
+        {{/each}}
+    {{else}}
+        <p>No heroes!</p>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
