@@ -1,0 +1,12 @@
+{{#partial "content"}}
+
+    <p>Name: {{ task.name }}</p>
+    <p>What squad is this hero in: {{ squad.name }}</p>
+    <p>
+        <a href="/heroes/{{hero.id}}/edit">Edit this hero</a><br>
+        <a href="/squad/{{hero.squadId}}/hero/{{hero.id}}/delete">DELETE this hero</a>
+    </p>
+
+{{/partial}}
+
+{{> layout.hbs}}
