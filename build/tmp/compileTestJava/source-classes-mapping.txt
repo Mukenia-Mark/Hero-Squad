@@ -1,2 +1,4 @@
 models/HeroTest.java
  models.HeroTest
+models/SquadTest.java
+ models.SquadTest

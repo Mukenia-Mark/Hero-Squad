@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Squad {
@@ -7,8 +8,10 @@ public class Squad {
   private String cause;
   private String members;
   
-  public Squad(String name) {
+  public Squad(String name, String cause, String members) {
     this.name = name;
+    this.cause = cause;
+    this.members = members;
   }
   
   public String getName() {

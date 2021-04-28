@@ -1,10 +1,10 @@
 App.java
  App
-models/Squad.java
- models.Squad
-dao/HeroDao.java
- dao.HeroDao
 models/Hero.java
  models.Hero
+dao/HeroDao.java
+ dao.HeroDao
+models/Squad.java
+ models.Squad
 dao/SquadDao.java
  dao.SquadDao
