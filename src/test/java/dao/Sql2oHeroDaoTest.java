@@ -63,7 +63,7 @@ public class Sql2oHeroDaoTest {
     String initialName = "rain-man";
     Hero hero = setupNewHero();
     heroDao.add(hero);
-    heroDao.update(hero.getId(),"Rain-man", 27,"controls the weather", "being indoors");
+    heroDao.update(hero.getId(),"Rain-man", 27,"controls the weather", "being indoors",1);
     Hero updatedHero = heroDao.findById(hero.getId());
     assertNotEquals(initialName, updatedHero.getName());
   }
@@ -79,7 +79,7 @@ public class Sql2oHeroDaoTest {
   @Test
   public void clearAllClearsAll() throws Exception {
     Hero hero = setupNewHero();
-    Hero otherHero = new Hero("Rain-man",27, "controls the weather","being indoors");
+    Hero otherHero = new Hero("Rain-man",27, "controls the weather","being indoors", 1);
     heroDao.add(hero);
     heroDao.add(otherHero);
     int daoSize = heroDao.getAll().size();
@@ -87,8 +87,16 @@ public class Sql2oHeroDaoTest {
     assertTrue(daoSize > 0 && daoSize > heroDao.getAll().size());
   }
   
+  @Test
+  public void squadIdIsReturnedCorrectly() throws Exception {
+    Hero hero = setupNewHero();
+    int originalSquadId = hero.getSquadId();
+    heroDao.add(hero);
+    assertEquals(originalSquadId, heroDao.findById(hero.getId()).getSquadId());
+  }
+  
   //helper methods
   public Hero setupNewHero(){
-    return new Hero("Rain-man", 27, "controls the weather", "being indoors");
+    return new Hero("Rain-man", 27, "controls the weather", "being indoors", 1);
   }
 }

@@ -2,3 +2,5 @@ models/HeroTest.java
  models.HeroTest
 models/SquadTest.java
  models.SquadTest
+dao/Sql2oHeroDaoTest.java
+ dao.Sql2oHeroDaoTest

@@ -22,8 +22,8 @@ public class Sql2oHeroDao implements HeroDao {
   
   @Override
   public void add(Hero hero) {
-    String sql= "INSERT INTO heroes (name, age, powers, weakness) VALUES (:name, :age, :powers, " +
-                ":weakness)";
+    String sql= "INSERT INTO heroes (name, age, powers, weakness, squadId) VALUES (:name, :age, " +
+                ":powers, :weakness, :squadId)";
     try(Connection con = sql2o.open()){
       int id = (int) con.createQuery(sql,true)
         .bind(hero)
@@ -45,15 +45,17 @@ public class Sql2oHeroDao implements HeroDao {
   }
   
   @Override
-  public void update(int id, String newName, int newAge, String newPowers, String newWeakness) {
-    String sql = "UPDATE heroes SET (name, age, powers, weakness) = (:name ,:age ,:powers ," +
-                 ":weakness) WHERE id=:id";
+  public void update(int id, String newName, int newAge, String newPowers, String newWeakness,
+                     int newSquadId) {
+    String sql = "UPDATE heroes SET (name, age, powers, weakness, squadId) = (:name ,:age ," +
+                 ":powers ,:weakness, :squadId) WHERE id=:id";
     try(Connection con = sql2o.open()){
       con.createQuery(sql)
       .addParameter("name", newName)
       .addParameter("age", newAge)
       .addParameter("powers", newPowers)
       .addParameter("weakness", newWeakness)
+      .addParameter("squadId", newSquadId)
       .addParameter("id", id)
       .executeUpdate();
     }catch (Sql2oException ex) {

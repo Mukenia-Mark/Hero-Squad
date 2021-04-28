@@ -14,7 +14,7 @@ public interface HeroDao {
   Hero findById(int id);
   
   //Update
-  void update(int id, String name, int age, String powers, String weakness);
+  void update(int id, String name, int age, String powers, String weakness, int squadId);
   
   //Delete
   void deleteById(int id);

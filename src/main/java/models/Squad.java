@@ -7,6 +7,34 @@ public class Squad {
   private String name;
   private String cause;
   private String members;
+  private int id;
+  
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Squad squad = (Squad) o;
+    return id == squad.id && Objects.equals(name, squad.name) &&
+           Objects.equals(cause, squad.cause) &&
+           Objects.equals(members, squad.members);
+  }
+  
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, cause, members, id);
+  }
+  
+  public int getId() {
+    return id;
+  }
+  
+  public void setId(int id) {
+    this.id = id;
+  }
+  
+  public Squad(int id) {
+    this.id = id;
+  }
   
   public Squad(String name, String cause, String members) {
     this.name = name;
@@ -38,18 +66,4 @@ public class Squad {
     this.members = members;
   }
   
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    Squad squad = (Squad) o;
-    return Objects.equals(name, squad.name) &&
-           Objects.equals(cause, squad.cause) &&
-           Objects.equals(members, squad.members);
-  }
-  
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, cause, members);
-  }
 }

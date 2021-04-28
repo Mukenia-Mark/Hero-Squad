@@ -5,13 +5,15 @@ import java.util.ArrayList;
 
 public class Hero {
   private String name;
+  private int squadId;
   private int age;
   private String powers;
   private String weakness;
   private int id;
   
-  public Hero(String name, int age, String powers, String weakness) {
+  public Hero(String name, int age, String powers, String weakness, int squadId) {
     this.name = name;
+    this.squadId = squadId;
     this.age = age;
     this.powers = powers;
     this.weakness = weakness;
@@ -20,6 +22,10 @@ public class Hero {
   public String getName() {
     return name;
   }
+  
+  public int getSquadId() { return squadId; }
+  
+  public void setSquadId(int squadId) { this.squadId = squadId; }
   
   public void setName(String name) {
     this.name = name;
